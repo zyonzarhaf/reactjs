@@ -1,0 +1,224 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F3F0EC;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.center {
+    max-width: 1000px;
+    margin: auto;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: black;
+    z-index: 2;
+}
+.nav-header {
+    color: white;
+}
+#nav-toggle-btn {
+    display: none;
+}
+.nav-links,
+.nav-icons {
+    gap: 24px;
+}
+.nav-links a,
+.nav-icons a {
+    text-decoration: none;
+    color: white;
+}
+/* #nav-toggle-btn:hover {
+    transform: rotate(90deg);
+    transition: 0.2s;
+    cursor: pointer;
+}
+#nav-toggle-btn i {
+    font-size: 1.8em;
+    color: white;
+    animation: bounce 4s ease-in-out infinite;
+} */
+.hero {
+    height: 96vh;
+    background: url(./images/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: left 4cm top -2cm;
+    background-size: cover;
+}
+.hero-content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 12rem 0;
+}
+.hero-content h1 {
+    color: #2B7966;
+    line-height: 3rem;
+}
+.hero-content h2 {
+    line-height: 2.8rem;
+}
+.hero-content p {
+    color: #222;
+}
+.hero-btn {
+    margin: 1.4rem 0 0 0;
+    padding: 0.6rem 2.4em;
+    background-color: rgb(0, 0, 0);
+    border-style: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hero-btn:hover {
+    background-color: #313131;
+}
+.hero-btn a {
+    text-decoration: none;
+    color: white;
+}
+.products {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 0;
+}
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+}
+.products-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 2rem 0;
+}
+.single-product {
+    padding: 1rem;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.080);
+}
+.single-product:hover {
+    cursor: pointer;
+}
+.product-description {
+    padding: 0.8rem 0 0 0;
+}
+.product-description h3 {
+    color: #222;
+}
+.product-description p {
+    color: #222;
+}
+.rate {
+    font-size: 1rem;
+    color: rgb(235, 181, 4);
+}
+.cart-icon {
+    color: #2B7966;
+}
+.cart-btn {
+    width: 32px;
+    height: 32px;
+    border-style: none;
+    border-radius: 50%;
+    background-color: #c1eec1;
+}
+.newsletter {
+    background-color: #222;
+}
+.newsletter-content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+    color: white;
+}
+.newsletter-content strong {
+    color: #db687f;
+}
+.newsletter-form {
+    align-items: center;
+}
+.newsletter-input {
+    border-radius: 8px 0 0 8px;
+}
+.signup-btn {
+    border-radius: 0px 8px 8px 0;
+    background-color: #2B7966;
+    font-weight: 700;
+    color: white;
+    transition: 0.3s;
+}
+.signup-btn:hover {
+    background-color:rgb(105, 185, 165);
+    cursor: pointer;
+}
+.newsletter-input,
+.signup-btn {
+    height: 3em;
+    padding: 0 1.4em 0 1.4em;
+    border-style: none;
+}
+footer {
+    background-color:rgb(247, 224, 195);
+}
+.footer-content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: 'Gayathri';
+    line-height: 1.8em;
+    color: rgb(53, 26, 5);
+}
+.footer-content h4 {
+    font-weight: 700;
+    color: rgb(78, 78, 78);
+}
+.footer-content p {
+    font-weight: 100;
+}
+.footer-content h4:hover,
+.footer-content p:hover {
+    color:rgb(160, 91, 35);
+    cursor: pointer;
+}
+.footer-content img {
+    margin: 0.6em 0;
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+        }
+    50% {
+        transform: scale(1.5);
+        }
+    100% {
+        transform: scale(1);
+        }
+}

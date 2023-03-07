@@ -1,0 +1,63 @@
+2nd solution
+
+import React, { useState, useEffect } from 'react';
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { FaQuoteRight } from 'react-icons/fa';
+import data from './data';
+
+function App() {
+  const [users, setUsers] = useState(data);
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    const lastValue = users.length -1;
+    if (value < 0) {
+      setValue(lastValue);
+    } else if (value > lastValue) {
+      setValue(0);
+    }
+  }, [value, users])
+  
+  useEffect(() => {
+    let slider =  setInterval(() => {
+        setValue(value + 1)
+      }, 4000)
+    return () => clearInterval(slider);
+  });
+  
+  return (
+    <section className='section'>
+      <div className='title'>
+        <h2>
+          <span>/</span>reviews
+        </h2>
+      </div>
+      <div className='section-center'>
+        {users.map((user, index) => {
+          const { id, image, name, title, quote } = user;
+
+          let position = 'nextSlide'
+          if (index === value) {
+            position = 'activeSlide' 
+          } else if (index === value - 1 || value === 0 && index === users.length - 1) {
+            position = 'lastSlide'
+          }
+
+          return (
+            <article key={id} className={position}>
+              <img src={image} alt={name} className='person-img' />
+              <h4>{name}</h4>
+              <p className='title'>{title}</p>
+              <p className='text'>{quote}</p>
+              <FaQuoteRight/>
+            </article>
+          );
+        })}
+        <button onClick={() => setValue(value - 1)} className='prev'><FiChevronLeft/></button>
+        <button onClick={() => setValue(value + 1)} className='next'><FiChevronRight/></button>
+      </div>
+    </section>
+  );
+};
+
+export default App;
